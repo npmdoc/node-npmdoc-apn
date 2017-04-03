@@ -1,0 +1,1229 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/node-apn/node-apn#readme">apn (v2.1.4)</a>
+</h1>
+<h4>An interface to the Apple Push Notification service for Node.js</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.apn">module apn</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apn.Notification">
+            function <span class="apidocSignatureSpan">apn.</span>Notification
+            <span class="apidocSignatureSpan">(payload)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apn.Provider">
+            function <span class="apidocSignatureSpan">apn.</span>Provider
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apn.token">
+            function <span class="apidocSignatureSpan">apn.</span>token
+            <span class="apidocSignatureSpan">(input)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">apn.</span>Notification.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">apn.</span>Provider.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.apn.Notification">module apn.Notification</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apn.Notification.Notification">
+            function <span class="apidocSignatureSpan">apn.</span>Notification
+            <span class="apidocSignatureSpan">(payload)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.apn.Notification.prototype">module apn.Notification.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apn.Notification.prototype.apsPayload">
+            function <span class="apidocSignatureSpan">apn.Notification.prototype.</span>apsPayload
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apn.Notification.prototype.compile">
+            function <span class="apidocSignatureSpan">apn.Notification.prototype.</span>compile
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apn.Notification.prototype.headers">
+            function <span class="apidocSignatureSpan">apn.Notification.prototype.</span>headers
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apn.Notification.prototype.length">
+            function <span class="apidocSignatureSpan">apn.Notification.prototype.</span>length
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apn.Notification.prototype.prepareAlert">
+            function <span class="apidocSignatureSpan">apn.Notification.prototype.</span>prepareAlert
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apn.Notification.prototype.setAction">
+            function <span class="apidocSignatureSpan">apn.Notification.prototype.</span>setAction
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apn.Notification.prototype.setActionLocKey">
+            function <span class="apidocSignatureSpan">apn.Notification.prototype.</span>setActionLocKey
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apn.Notification.prototype.setAlert">
+            function <span class="apidocSignatureSpan">apn.Notification.prototype.</span>setAlert
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apn.Notification.prototype.setBadge">
+            function <span class="apidocSignatureSpan">apn.Notification.prototype.</span>setBadge
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apn.Notification.prototype.setBody">
+            function <span class="apidocSignatureSpan">apn.Notification.prototype.</span>setBody
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apn.Notification.prototype.setCategory">
+            function <span class="apidocSignatureSpan">apn.Notification.prototype.</span>setCategory
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apn.Notification.prototype.setContentAvailable">
+            function <span class="apidocSignatureSpan">apn.Notification.prototype.</span>setContentAvailable
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apn.Notification.prototype.setExpiry">
+            function <span class="apidocSignatureSpan">apn.Notification.prototype.</span>setExpiry
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apn.Notification.prototype.setLaunchImage">
+            function <span class="apidocSignatureSpan">apn.Notification.prototype.</span>setLaunchImage
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apn.Notification.prototype.setLocArgs">
+            function <span class="apidocSignatureSpan">apn.Notification.prototype.</span>setLocArgs
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apn.Notification.prototype.setLocKey">
+            function <span class="apidocSignatureSpan">apn.Notification.prototype.</span>setLocKey
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apn.Notification.prototype.setMdm">
+            function <span class="apidocSignatureSpan">apn.Notification.prototype.</span>setMdm
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apn.Notification.prototype.setMutableContent">
+            function <span class="apidocSignatureSpan">apn.Notification.prototype.</span>setMutableContent
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apn.Notification.prototype.setPayload">
+            function <span class="apidocSignatureSpan">apn.Notification.prototype.</span>setPayload
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apn.Notification.prototype.setPriority">
+            function <span class="apidocSignatureSpan">apn.Notification.prototype.</span>setPriority
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apn.Notification.prototype.setSound">
+            function <span class="apidocSignatureSpan">apn.Notification.prototype.</span>setSound
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apn.Notification.prototype.setSubtitle">
+            function <span class="apidocSignatureSpan">apn.Notification.prototype.</span>setSubtitle
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apn.Notification.prototype.setThreadId">
+            function <span class="apidocSignatureSpan">apn.Notification.prototype.</span>setThreadId
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apn.Notification.prototype.setTitle">
+            function <span class="apidocSignatureSpan">apn.Notification.prototype.</span>setTitle
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apn.Notification.prototype.setTitleLocArgs">
+            function <span class="apidocSignatureSpan">apn.Notification.prototype.</span>setTitleLocArgs
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apn.Notification.prototype.setTitleLocKey">
+            function <span class="apidocSignatureSpan">apn.Notification.prototype.</span>setTitleLocKey
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apn.Notification.prototype.setUrlArgs">
+            function <span class="apidocSignatureSpan">apn.Notification.prototype.</span>setUrlArgs
+            <span class="apidocSignatureSpan">(value)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apn.Notification.prototype.toJSON">
+            function <span class="apidocSignatureSpan">apn.Notification.prototype.</span>toJSON
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.apn.Provider">module apn.Provider</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apn.Provider.Provider">
+            function <span class="apidocSignatureSpan">apn.</span>Provider
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.apn.Provider.prototype">module apn.Provider.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apn.Provider.prototype.send">
+            function <span class="apidocSignatureSpan">apn.Provider.prototype.</span>send
+            <span class="apidocSignatureSpan">(notification, recipients)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apn.Provider.prototype.shutdown">
+            function <span class="apidocSignatureSpan">apn.Provider.prototype.</span>shutdown
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.apn" id="apidoc.module.apn">module apn</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.apn.Notification" id="apidoc.element.apn.Notification">
+        function <span class="apidocSignatureSpan">apn.</span>Notification
+        <span class="apidocSignatureSpan">(payload)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Notification(payload) {
+  this.encoding = "utf8";
+  this.payload = {};
+  this.compiled = false;
+
+  this.aps = {};
+  this.expiry = 0;
+  this.priority = 10;
+
+  if (payload) {
+    for(let key in payload) {
+      if (payload.hasOwnProperty(key)) {
+        this[key] = payload[key];
+      }
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```javascript
+let deviceToken = "a9d0ed10e9cfd022a61cb08753f49c5a0b0dfb383697bf9f9d750a1003da19c7"
+```
+
+Create a notification object, configuring it with the relevant parameters (See the [notification documentation](doc/notification
+.markdown) for more details.)
+
+```javascript
+var note = new apn.<span class="apidocCodeKeywordSpan">Notification</span>();
+
+note.expiry = Math.floor(Date.now() / 1000) + 3600; // Expires 1 hour from now.
+note.badge = 3;
+note.sound = "ping.aiff";
+note.alert = "\uD83D\uDCE7 \u2709 You have a new message";
+note.payload = {'messageFrom': 'John Appleseed'};
+note.topic = "&lt;your-app-bundle-id&gt;";
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apn.Provider" id="apidoc.element.apn.Provider">
+        function <span class="apidocSignatureSpan">apn.</span>Provider
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Provider(options) {
+  if(false === (this instanceof Provider)) {
+    return new Provider(options);
+  }
+
+  this.client = new Client(options);
+
+  EventEmitter.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    key: "path/to/key.p8",
+    keyId: "T0K3NK3Y1D",
+    teamId: "T34M1D"
+  },
+  production: false
+};
+
+var apnProvider = new apn.<span class="apidocCodeKeywordSpan">Provider</span>(options);
+```
+
+By default, the provider will connect to the sandbox unless the environment variable `NODE_ENV=production` is set.
+
+For more information about configuration options consult the [provider documentation](doc/provider.markdown).
+
+Help with preparing the key and certificate files for connection can be found in the [wiki][certificateWiki]
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apn.token" id="apidoc.element.apn.token">
+        function <span class="apidocSignatureSpan">apn.</span>token
+        <span class="apidocSignatureSpan">(input)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function token(input) {
+  let token;
+
+  if (typeof input === "string") {
+    token = input;
+  } else if (Buffer.isBuffer(input)) {
+    token = input.toString("hex");
+  }
+
+  token = token.replace(/[^0-9a-f]/gi, "");
+
+  if (token.length === 0) {
+    throw new Error("Token has invalid length");
+  }
+
+  return token;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.apn.Notification" id="apidoc.module.apn.Notification">module apn.Notification</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.apn.Notification.Notification" id="apidoc.element.apn.Notification.Notification">
+        function <span class="apidocSignatureSpan">apn.</span>Notification
+        <span class="apidocSignatureSpan">(payload)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Notification(payload) {
+  this.encoding = "utf8";
+  this.payload = {};
+  this.compiled = false;
+
+  this.aps = {};
+  this.expiry = 0;
+  this.priority = 10;
+
+  if (payload) {
+    for(let key in payload) {
+      if (payload.hasOwnProperty(key)) {
+        this[key] = payload[key];
+      }
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```javascript
+let deviceToken = "a9d0ed10e9cfd022a61cb08753f49c5a0b0dfb383697bf9f9d750a1003da19c7"
+```
+
+Create a notification object, configuring it with the relevant parameters (See the [notification documentation](doc/notification
+.markdown) for more details.)
+
+```javascript
+var note = new apn.<span class="apidocCodeKeywordSpan">Notification</span>();
+
+note.expiry = Math.floor(Date.now() / 1000) + 3600; // Expires 1 hour from now.
+note.badge = 3;
+note.sound = "ping.aiff";
+note.alert = "\uD83D\uDCE7 \u2709 You have a new message";
+note.payload = {'messageFrom': 'John Appleseed'};
+note.topic = "&lt;your-app-bundle-id&gt;";
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.apn.Notification.prototype" id="apidoc.module.apn.Notification.prototype">module apn.Notification.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.apn.Notification.prototype.apsPayload" id="apidoc.element.apn.Notification.prototype.apsPayload">
+        function <span class="apidocSignatureSpan">apn.Notification.prototype.</span>apsPayload
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">apsPayload = function () {
+  var aps = this.aps;
+
+  return Object.keys(aps).find( key =&gt; aps[key] !== undefined ) ? aps : undefined;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apn.Notification.prototype.compile" id="apidoc.element.apn.Notification.prototype.compile">
+        function <span class="apidocSignatureSpan">apn.Notification.prototype.</span>compile
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">compile = function () {
+  if(!this.compiled) {
+    this.compiled = JSON.stringify(this);
+  }
+  return this.compiled;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  }
+
+  Provider.prototype = Object.create(EventEmitter.prototype);
+
+  Provider.prototype.send = function send(notification, recipients) {
+const builtNotification = {
+  headers: notification.headers(),
+  body:    notification.<span class="apidocCodeKeywordSpan">compile</span>(),
+};
+
+if (!Array.isArray(recipients)) {
+  recipients = [recipients];
+}
+
+return Promise.all( recipients.map( token =&gt; this.client.write(builtNotification, token) ))
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apn.Notification.prototype.headers" id="apidoc.element.apn.Notification.prototype.headers">
+        function <span class="apidocSignatureSpan">apn.Notification.prototype.</span>headers
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function headers() {
+  let headers = {};
+
+  if (this.priority !== 10) {
+    headers["apns-priority"] = this.priority;
+  }
+
+  if (this.id) {
+    headers["apns-id"] = this.id;
+  }
+
+  if (this.expiry &gt; 0) {
+    headers["apns-expiration"] = this.expiry;
+  }
+
+  if (this.topic) {
+    headers["apns-topic"] = this.topic;
+  }
+
+  if (this.collapseId) {
+    headers["apns-collapse-id"] = this.collapseId;
+  }
+
+  return headers;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  if (this.config.token.isExpired(3300)) {
+    this.config.token.regenerate(this.config.token.generation);
+  }
+  headers.authorization = "bearer " + this.config.token.current;
+  tokenGeneration = this.config.token.generation;
+}
+
+stream.<span class="apidocCodeKeywordSpan">headers</span>(headers);
+stream.write(notification.body);
+
+return new Promise ( resolve =&gt; {
+  stream.on("end", () =&gt; {
+    if (status === "200") {
+      resolve({ device });
+    } else if (responseData !== "") {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apn.Notification.prototype.length" id="apidoc.element.apn.Notification.prototype.length">
+        function <span class="apidocSignatureSpan">apn.Notification.prototype.</span>length
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">length = function () {
+  return Buffer.byteLength(this.compile(), this.encoding || "utf8");
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apn.Notification.prototype.prepareAlert" id="apidoc.element.apn.Notification.prototype.prepareAlert">
+        function <span class="apidocSignatureSpan">apn.Notification.prototype.</span>prepareAlert
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">prepareAlert = function () {
+  if (typeof this.aps.alert !== "object") {
+    this.aps.alert = {"body": this.aps.alert};
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apn.Notification.prototype.setAction" id="apidoc.element.apn.Notification.prototype.setAction">
+        function <span class="apidocSignatureSpan">apn.Notification.prototype.</span>setAction
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setAction = function (value) {
+  this[propName] = value;
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apn.Notification.prototype.setActionLocKey" id="apidoc.element.apn.Notification.prototype.setActionLocKey">
+        function <span class="apidocSignatureSpan">apn.Notification.prototype.</span>setActionLocKey
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setActionLocKey = function (value) {
+  this[propName] = value;
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apn.Notification.prototype.setAlert" id="apidoc.element.apn.Notification.prototype.setAlert">
+        function <span class="apidocSignatureSpan">apn.Notification.prototype.</span>setAlert
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setAlert = function (value) {
+  this[propName] = value;
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apn.Notification.prototype.setBadge" id="apidoc.element.apn.Notification.prototype.setBadge">
+        function <span class="apidocSignatureSpan">apn.Notification.prototype.</span>setBadge
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setBadge = function (value) {
+  this[propName] = value;
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apn.Notification.prototype.setBody" id="apidoc.element.apn.Notification.prototype.setBody">
+        function <span class="apidocSignatureSpan">apn.Notification.prototype.</span>setBody
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setBody = function (value) {
+  this[propName] = value;
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apn.Notification.prototype.setCategory" id="apidoc.element.apn.Notification.prototype.setCategory">
+        function <span class="apidocSignatureSpan">apn.Notification.prototype.</span>setCategory
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setCategory = function (value) {
+  this[propName] = value;
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apn.Notification.prototype.setContentAvailable" id="apidoc.element.apn.Notification.prototype.setContentAvailable">
+        function <span class="apidocSignatureSpan">apn.Notification.prototype.</span>setContentAvailable
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setContentAvailable = function (value) {
+  this[propName] = value;
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apn.Notification.prototype.setExpiry" id="apidoc.element.apn.Notification.prototype.setExpiry">
+        function <span class="apidocSignatureSpan">apn.Notification.prototype.</span>setExpiry
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setExpiry = function (value) {
+  this[propName] = value;
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apn.Notification.prototype.setLaunchImage" id="apidoc.element.apn.Notification.prototype.setLaunchImage">
+        function <span class="apidocSignatureSpan">apn.Notification.prototype.</span>setLaunchImage
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setLaunchImage = function (value) {
+  this[propName] = value;
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apn.Notification.prototype.setLocArgs" id="apidoc.element.apn.Notification.prototype.setLocArgs">
+        function <span class="apidocSignatureSpan">apn.Notification.prototype.</span>setLocArgs
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setLocArgs = function (value) {
+  this[propName] = value;
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apn.Notification.prototype.setLocKey" id="apidoc.element.apn.Notification.prototype.setLocKey">
+        function <span class="apidocSignatureSpan">apn.Notification.prototype.</span>setLocKey
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setLocKey = function (value) {
+  this[propName] = value;
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apn.Notification.prototype.setMdm" id="apidoc.element.apn.Notification.prototype.setMdm">
+        function <span class="apidocSignatureSpan">apn.Notification.prototype.</span>setMdm
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setMdm = function (value) {
+  this[propName] = value;
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apn.Notification.prototype.setMutableContent" id="apidoc.element.apn.Notification.prototype.setMutableContent">
+        function <span class="apidocSignatureSpan">apn.Notification.prototype.</span>setMutableContent
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setMutableContent = function (value) {
+  this[propName] = value;
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apn.Notification.prototype.setPayload" id="apidoc.element.apn.Notification.prototype.setPayload">
+        function <span class="apidocSignatureSpan">apn.Notification.prototype.</span>setPayload
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setPayload = function (value) {
+  this[propName] = value;
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apn.Notification.prototype.setPriority" id="apidoc.element.apn.Notification.prototype.setPriority">
+        function <span class="apidocSignatureSpan">apn.Notification.prototype.</span>setPriority
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setPriority = function (value) {
+  this[propName] = value;
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apn.Notification.prototype.setSound" id="apidoc.element.apn.Notification.prototype.setSound">
+        function <span class="apidocSignatureSpan">apn.Notification.prototype.</span>setSound
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setSound = function (value) {
+  this[propName] = value;
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apn.Notification.prototype.setSubtitle" id="apidoc.element.apn.Notification.prototype.setSubtitle">
+        function <span class="apidocSignatureSpan">apn.Notification.prototype.</span>setSubtitle
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setSubtitle = function (value) {
+  this[propName] = value;
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apn.Notification.prototype.setThreadId" id="apidoc.element.apn.Notification.prototype.setThreadId">
+        function <span class="apidocSignatureSpan">apn.Notification.prototype.</span>setThreadId
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setThreadId = function (value) {
+  this[propName] = value;
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apn.Notification.prototype.setTitle" id="apidoc.element.apn.Notification.prototype.setTitle">
+        function <span class="apidocSignatureSpan">apn.Notification.prototype.</span>setTitle
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setTitle = function (value) {
+  this[propName] = value;
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apn.Notification.prototype.setTitleLocArgs" id="apidoc.element.apn.Notification.prototype.setTitleLocArgs">
+        function <span class="apidocSignatureSpan">apn.Notification.prototype.</span>setTitleLocArgs
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setTitleLocArgs = function (value) {
+  this[propName] = value;
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apn.Notification.prototype.setTitleLocKey" id="apidoc.element.apn.Notification.prototype.setTitleLocKey">
+        function <span class="apidocSignatureSpan">apn.Notification.prototype.</span>setTitleLocKey
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setTitleLocKey = function (value) {
+  this[propName] = value;
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apn.Notification.prototype.setUrlArgs" id="apidoc.element.apn.Notification.prototype.setUrlArgs">
+        function <span class="apidocSignatureSpan">apn.Notification.prototype.</span>setUrlArgs
+        <span class="apidocSignatureSpan">(value)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setUrlArgs = function (value) {
+  this[propName] = value;
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apn.Notification.prototype.toJSON" id="apidoc.element.apn.Notification.prototype.toJSON">
+        function <span class="apidocSignatureSpan">apn.Notification.prototype.</span>toJSON
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toJSON = function () {
+  if (this.rawPayload != null) {
+    return this.rawPayload;
+  }
+
+  if (typeof this._mdm === "string") {
+    return { "mdm": this._mdm };
+  }
+
+  return Object.assign({}, this.payload, {aps: this.apsPayload()});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.apn.Provider" id="apidoc.module.apn.Provider">module apn.Provider</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.apn.Provider.Provider" id="apidoc.element.apn.Provider.Provider">
+        function <span class="apidocSignatureSpan">apn.</span>Provider
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Provider(options) {
+  if(false === (this instanceof Provider)) {
+    return new Provider(options);
+  }
+
+  this.client = new Client(options);
+
+  EventEmitter.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    key: "path/to/key.p8",
+    keyId: "T0K3NK3Y1D",
+    teamId: "T34M1D"
+  },
+  production: false
+};
+
+var apnProvider = new apn.<span class="apidocCodeKeywordSpan">Provider</span>(options);
+```
+
+By default, the provider will connect to the sandbox unless the environment variable `NODE_ENV=production` is set.
+
+For more information about configuration options consult the [provider documentation](doc/provider.markdown).
+
+Help with preparing the key and certificate files for connection can be found in the [wiki][certificateWiki]
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.apn.Provider.prototype" id="apidoc.module.apn.Provider.prototype">module apn.Provider.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.apn.Provider.prototype.send" id="apidoc.element.apn.Provider.prototype.send">
+        function <span class="apidocSignatureSpan">apn.Provider.prototype.</span>send
+        <span class="apidocSignatureSpan">(notification, recipients)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function send(notification, recipients) {
+  const builtNotification = {
+    headers: notification.headers(),
+    body:    notification.compile(),
+  };
+
+  if (!Array.isArray(recipients)) {
+    recipients = [recipients];
+  }
+
+  return Promise.all( recipients.map( token =&gt; this.client.write(builtNotification, token) ))
+    .then( responses =&gt; {
+    let sent = [];
+    let failed = [];
+
+    responses.forEach( response =&gt; {
+      if (response.status || response.error) {
+        failed.push(response);
+      } else {
+        sent.push(response);
+      }
+    });
+    return {sent, failed};
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+note.payload = {'messageFrom': 'John Appleseed'};
+note.topic = "&lt;your-app-bundle-id&gt;";
+```
+
+Send the notification to the API with `send`, which returns a promise.
+
+```javascript
+apnProvider.<span class="apidocCodeKeywordSpan">send</span>(note, deviceToken).then( (result) =&gt; {
+  // see documentation for an explanation of result
+});
+```
+
+This will result in the the following notification payload being sent to the device
+
+```json
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apn.Provider.prototype.shutdown" id="apidoc.element.apn.Provider.prototype.shutdown">
+        function <span class="apidocSignatureSpan">apn.Provider.prototype.</span>shutdown
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function shutdown() {
+  this.client.shutdown();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+      return;
+    }
+    const resolve = this.queue.shift();
+    resolve(stream);
+  }
+
+  if (this.shutdownPending) {
+    this.endpointManager.<span class="apidocCodeKeywordSpan">shutdown</span>();
+  }
+});
+
+this.endpointManager.on("error", (err) =&gt; {
+  this.queue.forEach((resolve) =&gt; {
+    resolve(Promise.reject(err));
+  });
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
