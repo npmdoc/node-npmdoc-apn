@@ -607,23 +607,7 @@ note.topic = "&lt;your-app-bundle-id&gt;";
   }
   return this.compiled;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-  }
-
-  Provider.prototype = Object.create(EventEmitter.prototype);
-
-  Provider.prototype.send = function send(notification, recipients) {
-const builtNotification = {
-  headers: notification.headers(),
-  body:    notification.<span class="apidocCodeKeywordSpan">compile</span>(),
-};
-
-if (!Array.isArray(recipients)) {
-  recipients = [recipients];
-}
-
-return Promise.all( recipients.map( token =&gt; this.client.write(builtNotification, token) ))
-...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 
@@ -660,23 +644,7 @@ return Promise.all( recipients.map( token =&gt; this.client.write(builtNotificat
 
   return headers;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-  if (this.config.token.isExpired(3300)) {
-    this.config.token.regenerate(this.config.token.generation);
-  }
-  headers.authorization = "bearer " + this.config.token.current;
-  tokenGeneration = this.config.token.generation;
-}
-
-stream.<span class="apidocCodeKeywordSpan">headers</span>(headers);
-stream.write(notification.body);
-
-return new Promise ( resolve =&gt; {
-  stream.on("end", () =&gt; {
-    if (status === "200") {
-      resolve({ device });
-    } else if (responseData !== "") {
-...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 
@@ -1198,23 +1166,7 @@ This will result in the the following notification payload being sent to the dev
     <li>description and source-code<pre class="apidocCodePre">function shutdown() {
   this.client.shutdown();
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-      return;
-    }
-    const resolve = this.queue.shift();
-    resolve(stream);
-  }
-
-  if (this.shutdownPending) {
-    this.endpointManager.<span class="apidocCodeKeywordSpan">shutdown</span>();
-  }
-});
-
-this.endpointManager.on("error", (err) =&gt; {
-  this.queue.forEach((resolve) =&gt; {
-    resolve(Promise.reject(err));
-  });
-...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 

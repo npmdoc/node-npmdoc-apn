@@ -614,23 +614,7 @@ note.topic = &#x22;&#x3c;your-app-bundle-id&#x3e;&#x22;;
   }
   return this.compiled;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-  }
-
-  Provider.prototype = Object.create(EventEmitter.prototype);
-
-  Provider.prototype.send = function send(notification, recipients) {
-const builtNotification = {
-  headers: notification.headers(),
-  body:    notification.<span class="apidocCodeKeywordSpan">compile</span>(),
-};
-
-if (!Array.isArray(recipients)) {
-  recipients = [recipients];
-}
-
-return Promise.all( recipients.map( token =&#x3e; this.client.write(builtNotification, token) ))
-...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 
@@ -667,23 +651,7 @@ return Promise.all( recipients.map( token =&#x3e; this.client.write(builtNotific
 
   return headers;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-  if (this.config.token.isExpired(3300)) {
-    this.config.token.regenerate(this.config.token.generation);
-  }
-  headers.authorization = &#x22;bearer &#x22; + this.config.token.current;
-  tokenGeneration = this.config.token.generation;
-}
-
-stream.<span class="apidocCodeKeywordSpan">headers</span>(headers);
-stream.write(notification.body);
-
-return new Promise ( resolve =&#x3e; {
-  stream.on(&#x22;end&#x22;, () =&#x3e; {
-    if (status === &#x22;200&#x22;) {
-      resolve({ device });
-    } else if (responseData !== &#x22;&#x22;) {
-...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 
@@ -1205,23 +1173,7 @@ This will result in the the following notification payload being sent to the dev
     <li>description and source-code<pre class="apidocCodePre">function shutdown() {
   this.client.shutdown();
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-      return;
-    }
-    const resolve = this.queue.shift();
-    resolve(stream);
-  }
-
-  if (this.shutdownPending) {
-    this.endpointManager.<span class="apidocCodeKeywordSpan">shutdown</span>();
-  }
-});
-
-this.endpointManager.on(&#x22;error&#x22;, (err) =&#x3e; {
-  this.queue.forEach((resolve) =&#x3e; {
-    resolve(Promise.reject(err));
-  });
-...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 
