@@ -63,6 +63,24 @@
 
         <li>
 
+            <a class="apidocElementLiA" href="#apidoc.element.apn.APNCertificate">
+            function <span class="apidocSignatureSpan">apn.</span>APNCertificate
+            <span class="apidocSignatureSpan">(cert)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apn.APNKey">
+            function <span class="apidocSignatureSpan">apn.</span>APNKey
+            <span class="apidocSignatureSpan">(key)</span>
+            </a>
+
+        </li>
+
+        <li>
+
             <a class="apidocElementLiA" href="#apidoc.element.apn.Notification">
             function <span class="apidocSignatureSpan">apn.</span>Notification
             <span class="apidocSignatureSpan">(payload)</span>
@@ -90,6 +108,18 @@
 
         <li>
 
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">apn.</span>APNCertificate.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">apn.</span>APNKey.prototype</span>
+
+        </li>
+
+        <li>
+
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">apn.</span>Notification.prototype</span>
 
         </li>
@@ -97,6 +127,76 @@
         <li>
 
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">apn.</span>Provider.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.apn.APNCertificate">module apn.APNCertificate</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apn.APNCertificate.APNCertificate">
+            function <span class="apidocSignatureSpan">apn.</span>APNCertificate
+            <span class="apidocSignatureSpan">(cert)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.apn.APNCertificate.prototype">module apn.APNCertificate.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apn.APNCertificate.prototype.environment">
+            function <span class="apidocSignatureSpan">apn.APNCertificate.prototype.</span>environment
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apn.APNCertificate.prototype.key">
+            function <span class="apidocSignatureSpan">apn.APNCertificate.prototype.</span>key
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apn.APNCertificate.prototype.validity">
+            function <span class="apidocSignatureSpan">apn.APNCertificate.prototype.</span>validity
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.apn.APNKey">module apn.APNKey</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apn.APNKey.APNKey">
+            function <span class="apidocSignatureSpan">apn.</span>APNKey
+            <span class="apidocSignatureSpan">(key)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.apn.APNKey.prototype">module apn.APNKey.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.apn.APNKey.prototype.fingerprint">
+            function <span class="apidocSignatureSpan">apn.APNKey.prototype.</span>fingerprint
+            <span class="apidocSignatureSpan">()</span>
+            </a>
 
         </li>
 
@@ -413,6 +513,44 @@
 
 
     <h2>
+        <a href="#apidoc.element.apn.APNCertificate" id="apidoc.element.apn.APNCertificate">
+        function <span class="apidocSignatureSpan">apn.</span>APNCertificate
+        <span class="apidocSignatureSpan">(cert)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function APNCertificate(cert) {
+  if(!cert.publicKey || !cert.validity || !cert.subject) {
+    throw new Error(&#x22;certificate object is invalid&#x22;);
+  }
+
+  this._cert = cert;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apn.APNKey" id="apidoc.element.apn.APNKey">
+        function <span class="apidocSignatureSpan">apn.</span>APNKey
+        <span class="apidocSignatureSpan">(key)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function APNKey(key) {
+  if(!key || !key.n || !key.e) {
+    throw new Error(&#x22;key is not a valid public key&#x22;);
+  }
+
+  this._key = key;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
         <a href="#apidoc.element.apn.Notification" id="apidoc.element.apn.Notification">
         function <span class="apidocSignatureSpan">apn.</span>Notification
         <span class="apidocSignatureSpan">(payload)</span>
@@ -436,24 +574,7 @@
     }
   }
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-```javascript
-let deviceToken = &#x22;a9d0ed10e9cfd022a61cb08753f49c5a0b0dfb383697bf9f9d750a1003da19c7&#x22;
-```
-
-Create a notification object, configuring it with the relevant parameters (See the [notification documentation](doc/notification
-.markdown) for more details.)
-
-```javascript
-var note = new apn.<span class="apidocCodeKeywordSpan">Notification</span>();
-
-note.expiry = Math.floor(Date.now() / 1000) + 3600; // Expires 1 hour from now.
-note.badge = 3;
-note.sound = &#x22;ping.aiff&#x22;;
-note.alert = &#x22;\uD83D\uDCE7 \u2709 You have a new message&#x22;;
-note.payload = {&#x27;messageFrom&#x27;: &#x27;John Appleseed&#x27;};
-note.topic = &#x22;&#x3c;your-app-bundle-id&#x3e;&#x22;;
-...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 
@@ -474,23 +595,7 @@ note.topic = &#x22;&#x3c;your-app-bundle-id&#x3e;&#x22;;
 
   EventEmitter.call(this);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-    key: &#x22;path/to/key.p8&#x22;,
-    keyId: &#x22;T0K3NK3Y1D&#x22;,
-    teamId: &#x22;T34M1D&#x22;
-  },
-  production: false
-};
-
-var apnProvider = new apn.<span class="apidocCodeKeywordSpan">Provider</span>(options);
-```
-
-By default, the provider will connect to the sandbox unless the environment variable `NODE_ENV=production` is set.
-
-For more information about configuration options consult the [provider documentation](doc/provider.markdown).
-
-Help with preparing the key and certificate files for connection can be found in the [wiki][certificateWiki]
-...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 
@@ -527,6 +632,200 @@ Help with preparing the key and certificate files for connection can be found in
 
 
 
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.apn.APNCertificate" id="apidoc.module.apn.APNCertificate">module apn.APNCertificate</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.apn.APNCertificate.APNCertificate" id="apidoc.element.apn.APNCertificate.APNCertificate">
+        function <span class="apidocSignatureSpan">apn.</span>APNCertificate
+        <span class="apidocSignatureSpan">(cert)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function APNCertificate(cert) {
+  if(!cert.publicKey || !cert.validity || !cert.subject) {
+    throw new Error(&#x22;certificate object is invalid&#x22;);
+  }
+
+  this._cert = cert;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.apn.APNCertificate.prototype" id="apidoc.module.apn.APNCertificate.prototype">module apn.APNCertificate.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.apn.APNCertificate.prototype.environment" id="apidoc.element.apn.APNCertificate.prototype.environment">
+        function <span class="apidocSignatureSpan">apn.APNCertificate.prototype.</span>environment
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">environment = function () {
+  let environment = { sandbox: false, production: false };
+
+  if (this._cert.getExtension({ &#x22;id&#x22;: oids.applePushServiceClientDevelopment })) {
+    environment.sandbox = true;
+  }
+
+  if (this._cert.getExtension({ &#x22;id&#x22;: oids.applePushServiceClientProduction })) {
+    environment.production = true;
+  }
+  return environment;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  let validity = certificate.validity();
+  if (validity.notAfter.getTime() &#x3c; Date.now()) {
+    throw new Error(&#x22;certificate has expired: &#x22; + validity.notAfter.toJSON());
+  }
+
+  if (credentials.production !== undefined) {
+    let environment = certificate.<span class="apidocCodeKeywordSpan">environment</span>();
+    if ( (credentials.production &#x26;&#x26; !environment.production) ||
+      (!credentials.production &#x26;&#x26; !environment.sandbox)) {
+      throw new Error(&#x22;certificate does not support configured environment, production: &#x22; + credentials.production);
+    }
+  }
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apn.APNCertificate.prototype.key" id="apidoc.element.apn.APNCertificate.prototype.key">
+        function <span class="apidocSignatureSpan">apn.APNCertificate.prototype.</span>key
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">key = function () {
+  return new APNKey(this._cert.publicKey);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+
+&#x22;use strict&#x22;;
+
+function validateCredentials(credentials) {
+let certificate = credentials.certificates[0];
+
+if (credentials.key.fingerprint() !== certificate.<span class="apidocCodeKeywordSpan">key</span>().fingerprint()) {
+  throw new Error(&#x22;certificate and key do not match&#x22;);
+}
+
+let validity = certificate.validity();
+if (validity.notAfter.getTime() &#x3c; Date.now()) {
+  throw new Error(&#x22;certificate has expired: &#x22; + validity.notAfter.toJSON());
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.apn.APNCertificate.prototype.validity" id="apidoc.element.apn.APNCertificate.prototype.validity">
+        function <span class="apidocSignatureSpan">apn.APNCertificate.prototype.</span>validity
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validity = function () {
+  return this._cert.validity;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+function validateCredentials(credentials) {
+let certificate = credentials.certificates[0];
+
+if (credentials.key.fingerprint() !== certificate.key().fingerprint()) {
+  throw new Error(&#x22;certificate and key do not match&#x22;);
+}
+
+let validity = certificate.<span class="apidocCodeKeywordSpan">validity</span>();
+if (validity.notAfter.getTime() &#x3c; Date.now()) {
+  throw new Error(&#x22;certificate has expired: &#x22; + validity.notAfter.toJSON());
+}
+
+if (credentials.production !== undefined) {
+  let environment = certificate.environment();
+  if ( (credentials.production &#x26;&#x26; !environment.production) ||
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.apn.APNKey" id="apidoc.module.apn.APNKey">module apn.APNKey</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.apn.APNKey.APNKey" id="apidoc.element.apn.APNKey.APNKey">
+        function <span class="apidocSignatureSpan">apn.</span>APNKey
+        <span class="apidocSignatureSpan">(key)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function APNKey(key) {
+  if(!key || !key.n || !key.e) {
+    throw new Error(&#x22;key is not a valid public key&#x22;);
+  }
+
+  this._key = key;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.apn.APNKey.prototype" id="apidoc.module.apn.APNKey.prototype">module apn.APNKey.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.apn.APNKey.prototype.fingerprint" id="apidoc.element.apn.APNKey.prototype.fingerprint">
+        function <span class="apidocSignatureSpan">apn.APNKey.prototype.</span>fingerprint
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fingerprint = function () {
+  return forge.pki.getPublicKeyFingerprint(this._key, {encoding: &#x22;hex&#x22;});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+
+&#x22;use strict&#x22;;
+
+function validateCredentials(credentials) {
+let certificate = credentials.certificates[0];
+
+if (credentials.key.<span class="apidocCodeKeywordSpan">fingerprint</span>() !== certificate.key().fingerprint()) {
+  throw new Error(&#x22;certificate and key do not match&#x22;);
+}
+
+let validity = certificate.validity();
+if (validity.notAfter.getTime() &#x3c; Date.now()) {
+  throw new Error(&#x22;certificate has expired: &#x22; + validity.notAfter.toJSON());
+}
+...</pre></li>
+    </ul>
+
+
 </div>
 
 <div class="apidocSectionDiv">
@@ -557,24 +856,7 @@ Help with preparing the key and certificate files for connection can be found in
     }
   }
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-```javascript
-let deviceToken = &#x22;a9d0ed10e9cfd022a61cb08753f49c5a0b0dfb383697bf9f9d750a1003da19c7&#x22;
-```
-
-Create a notification object, configuring it with the relevant parameters (See the [notification documentation](doc/notification
-.markdown) for more details.)
-
-```javascript
-var note = new apn.<span class="apidocCodeKeywordSpan">Notification</span>();
-
-note.expiry = Math.floor(Date.now() / 1000) + 3600; // Expires 1 hour from now.
-note.badge = 3;
-note.sound = &#x22;ping.aiff&#x22;;
-note.alert = &#x22;\uD83D\uDCE7 \u2709 You have a new message&#x22;;
-note.payload = {&#x27;messageFrom&#x27;: &#x27;John Appleseed&#x27;};
-note.topic = &#x22;&#x3c;your-app-bundle-id&#x3e;&#x22;;
-...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 
@@ -614,7 +896,23 @@ note.topic = &#x22;&#x3c;your-app-bundle-id&#x3e;&#x22;;
   }
   return this.compiled;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  }
+
+  Provider.prototype = Object.create(EventEmitter.prototype);
+
+  Provider.prototype.send = function send(notification, recipients) {
+const builtNotification = {
+  headers: notification.headers(),
+  body:    notification.<span class="apidocCodeKeywordSpan">compile</span>(),
+};
+
+if (!Array.isArray(recipients)) {
+  recipients = [recipients];
+}
+
+return Promise.all( recipients.map( token =&#x3e; this.client.write(builtNotification, token) ))
+...</pre></li>
     </ul>
 
 
@@ -651,7 +949,23 @@ note.topic = &#x22;&#x3c;your-app-bundle-id&#x3e;&#x22;;
 
   return headers;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  if (this.config.token.isExpired(3300)) {
+    this.config.token.regenerate(this.config.token.generation);
+  }
+  headers.authorization = &#x22;bearer &#x22; + this.config.token.current;
+  tokenGeneration = this.config.token.generation;
+}
+
+stream.<span class="apidocCodeKeywordSpan">headers</span>(headers);
+stream.write(notification.body);
+
+return new Promise ( resolve =&#x3e; {
+  stream.on(&#x22;end&#x22;, () =&#x3e; {
+    if (status === &#x22;200&#x22;) {
+      resolve({ device });
+    } else if (responseData !== &#x22;&#x22;) {
+...</pre></li>
     </ul>
 
 
@@ -1058,7 +1372,23 @@ note.topic = &#x22;&#x3c;your-app-bundle-id&#x3e;&#x22;;
 
   return Object.assign({}, this.payload, {aps: this.apsPayload()});
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+if (credentials.key.fingerprint() !== certificate.key().fingerprint()) {
+  throw new Error(&#x22;certificate and key do not match&#x22;);
+}
+
+let validity = certificate.validity();
+if (validity.notAfter.getTime() &#x3c; Date.now()) {
+  throw new Error(&#x22;certificate has expired: &#x22; + validity.notAfter.<span class="apidocCodeKeywordSpan">toJSON</span>());
+}
+
+if (credentials.production !== undefined) {
+  let environment = certificate.environment();
+  if ( (credentials.production &#x26;&#x26; !environment.production) ||
+    (!credentials.production &#x26;&#x26; !environment.sandbox)) {
+    throw new Error(&#x22;certificate does not support configured environment, production: &#x22; + credentials.production);
+...</pre></li>
     </ul>
 
 
@@ -1084,23 +1414,7 @@ note.topic = &#x22;&#x3c;your-app-bundle-id&#x3e;&#x22;;
 
   EventEmitter.call(this);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-    key: &#x22;path/to/key.p8&#x22;,
-    keyId: &#x22;T0K3NK3Y1D&#x22;,
-    teamId: &#x22;T34M1D&#x22;
-  },
-  production: false
-};
-
-var apnProvider = new apn.<span class="apidocCodeKeywordSpan">Provider</span>(options);
-```
-
-By default, the provider will connect to the sandbox unless the environment variable `NODE_ENV=production` is set.
-
-For more information about configuration options consult the [provider documentation](doc/provider.markdown).
-
-Help with preparing the key and certificate files for connection can be found in the [wiki][certificateWiki]
-...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 
@@ -1142,23 +1456,7 @@ Help with preparing the key and certificate files for connection can be found in
     return {sent, failed};
   });
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-note.payload = {&#x27;messageFrom&#x27;: &#x27;John Appleseed&#x27;};
-note.topic = &#x22;&#x3c;your-app-bundle-id&#x3e;&#x22;;
-```
-
-Send the notification to the API with `send`, which returns a promise.
-
-```javascript
-apnProvider.<span class="apidocCodeKeywordSpan">send</span>(note, deviceToken).then( (result) =&#x3e; {
-  // see documentation for an explanation of result
-});
-```
-
-This will result in the the following notification payload being sent to the device
-
-```json
-...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 
@@ -1173,7 +1471,23 @@ This will result in the the following notification payload being sent to the dev
     <li>description and source-code<pre class="apidocCodePre">function shutdown() {
   this.client.shutdown();
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+      return;
+    }
+    const resolve = this.queue.shift();
+    resolve(stream);
+  }
+
+  if (this.shutdownPending) {
+    this.endpointManager.<span class="apidocCodeKeywordSpan">shutdown</span>();
+  }
+});
+
+this.endpointManager.on(&#x22;error&#x22;, (err) =&#x3e; {
+  this.queue.forEach((resolve) =&#x3e; {
+    resolve(Promise.reject(err));
+  });
+...</pre></li>
     </ul>
 
 
